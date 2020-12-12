@@ -91,8 +91,11 @@ class SentryLog extends Monolog
     private function setUser(SentryScope $scope): void
     {
         try {
-            if (!$this->canGetCustomerData()
-                || !$this->customerSession->isLoggedIn()) {
+            if (
+                !$this->canGetCustomerData()
+                || !$this->customerSession->isLoggedIn()
+                || !$this->data->isPiiActive()
+            ) {
                 return;
             }
 

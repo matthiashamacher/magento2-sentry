@@ -112,4 +112,9 @@ class SentryScript extends Template
     {
         return $this->dataHelper->getLogrocketKey();
     }
+
+    public function sendPiiInformation(): bool
+    {
+        return $this->dataHelper->isPiiActive();
+    }
 }

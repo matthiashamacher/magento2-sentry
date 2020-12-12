@@ -52,6 +52,10 @@ class GlobalExceptionCatcher
             $config['environment'] = $environment;
         }
 
+        if (true === $this->sentryHelper->isPiiActive()) {
+            $config['send_default_pii'] = true;
+        }
+
         $this->sentryInteraction->initialize($config);
 
         try {

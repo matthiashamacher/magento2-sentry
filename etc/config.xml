@@ -9,6 +9,9 @@
                 <use_logrocket>0</use_logrocket>
                 <logrocket_identify>0</logrocket_identify>
             </general>
+            <privacy>
+                <personally_identifiable_information>0</personally_identifiable_information>
+            </privacy>
         </sentry>
     </default>
 </config>

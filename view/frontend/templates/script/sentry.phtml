@@ -16,6 +16,7 @@ if (!$block->canUseScriptTag($block->getNameInLayout())) {
         dsn: '<?= $block->escapeUrl(trim($block->getDSN())) ?>',
         release: '<?= $block->escapeHtml(trim($block->getVersion())) ?>',
         environment: '<?= $block->escapeHtml(trim($block->getEnvironment())) ?>',
+        sendDefaultPii: '<?= $block->sendPiiInformation() ?>',
     });
 </script>
 

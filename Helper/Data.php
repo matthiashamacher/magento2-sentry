@@ -244,7 +244,7 @@ class Data extends AbstractHelper
     /**
      * @return bool
      */
-    public function useLogrocket()
+    public function useLogrocket(): bool
     {
         return $this->scopeConfig->isSetFlag(static::XML_PATH_SRS.'use_logrocket') &&
             array_key_exists('logrocket_key', $this->config) &&
@@ -254,8 +254,16 @@ class Data extends AbstractHelper
     /**
      * @return bool
      */
-    public function useLogrocketIdentify()
+    public function useLogrocketIdentify(): bool
     {
         return $this->scopeConfig->isSetFlag(static::XML_PATH_SRS.'logrocket_identify');
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPiiActive(): bool
+    {
+        return $this->scopeConfig->isSetFlag('sentry/privacy/personally_identifiable_information');
     }
 }
